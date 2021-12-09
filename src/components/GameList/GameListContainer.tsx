@@ -17,7 +17,7 @@ const GameList = (): ReactElement => {
           "x-rapidapi-host": API_HOST,
         },
         params: {
-          platform: 'pc',
+          platform: 'browser',
         },
       })
       .then(res => setGames(res.data))

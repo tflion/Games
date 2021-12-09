@@ -1,7 +1,7 @@
 import React, { ReactElement} from "react";
 import GameCard from "../GameCard";
 import { Game } from "../../types";
-import { List } from './styles';
+import { List, ListItem } from './styles';
 
 interface Props {
   err?: string
@@ -20,9 +20,9 @@ const GameList = ({ err, games }: Props): ReactElement => {
   return (
     <List>
       {games.map(game => (
-        <li key={game.id}>
+        <ListItem key={game.id}>
             <GameCard content={game}/>
-        </li>
+        </ListItem>
       ))}
     </List>
   );
