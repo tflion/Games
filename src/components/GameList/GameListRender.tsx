@@ -1,14 +1,16 @@
-import React, { ReactElement} from "react";
+import React, { ChangeEvent, ReactElement } from "react";
 import GameCard from "../GameCard";
+import GameFilter from "../GameFilter";
 import { Game } from "../../types";
-import { List, ListItem } from './styles';
+import { List, ListItem } from "./styles";
 
 interface Props {
-  err?: string
+  err?: string;
   games: Game[];
+  onFilterChange: (e: ChangeEvent<HTMLFormElement>) => void;
 }
 
-const GameList = ({ err, games }: Props): ReactElement => {
+const GameList = ({ err, games, onFilterChange }: Props): ReactElement => {
   if (err) {
     return <p>Erro ao exibir os jogos.</p>;
   }
@@ -18,13 +20,16 @@ const GameList = ({ err, games }: Props): ReactElement => {
   }
 
   return (
-    <List>
-      {games.map(game => (
-        <ListItem key={game.id}>
-            <GameCard content={game}/>
-        </ListItem>
-      ))}
-    </List>
+    <>
+      <GameFilter onChange={onFilterChange} />
+      <List>
+        {games.map((game) => (
+          <ListItem key={game.id}>
+            <GameCard content={game} />
+          </ListItem>
+        ))}
+      </List>
+    </>
   );
 };
 

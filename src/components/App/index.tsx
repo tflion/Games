@@ -9,6 +9,7 @@ const App = (): ReactElement => (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/game/:id" element={<p>estou em algum ID</p>}></Route>
       </Routes>
     </BrowserRouter>
   </>
