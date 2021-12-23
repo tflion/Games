@@ -34,5 +34,6 @@ export const Select = styled.select`
   width: 100%;
   margin-top: 0;
   color: white;
+  cursor: pointer;
   background-color: ${backgroundColor};
 `;

@@ -1,4 +1,3 @@
-import { platform } from "os";
 import React, { ChangeEvent, ReactElement } from "react";
 import { GENRES, PLATFORMS, SORT_BY, TAGS } from "./Constants";
 import { Form, Label, Select } from "./styles";
