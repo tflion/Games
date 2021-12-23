@@ -35,7 +35,7 @@ const GameDetailRender = ({ err, game }: Props): ReactElement => {
       <Background src={game?.thumbnail} alt={`${game?.title} background`} />
       <CardGame>
         <ImageGame src={game?.thumbnail} />
-        <a href={game?.game_url}>
+        <a href={game?.game_url} target="_blank" rel="noreferrer">
           <PlayNow>PLAY NOW ▶ </PlayNow>
         </a>
       </CardGame>
